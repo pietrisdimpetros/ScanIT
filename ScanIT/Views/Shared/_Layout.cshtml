@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/Favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="/Favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/Favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/Favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/Favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/Favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/Favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/Favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/Favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Favicon/favicon-16x16.png">
+    <link rel="manifest" href="/Favicon/manifest.json">
+    <title>@ViewBag.Title - ScanIT</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="padding:0px;">
+
+    <div class="row" style="max-width: 100%;">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-bottom navbar-dark bg-dark" style="padding-top:1px;">
+                <a href="@Url.Action("Index","Home")" title="List View" class="links navbar-brand d_flex align-items-center" id="homeButton">
+                    <img src="~/Resources/Images/ScanITLogoFour.png" width="60" height="60" class="d-md-inline-block align-top" alt="logo" />
+                </a>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="navbar-nav">
+                        @if (User.IsInRole(role: "Administrator") || User.IsInRole(role: "Manager"))
+                        {
+                            <li class="nav-item active">
+                                @Html.ActionLink("Manage Products", "Index", "Products")
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item active">
+                                @Html.ActionLink("Products", "Index", "Products")
+                            </li>
+                        }
+                        <li class="nav-item dropup active">
+                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Sitemap</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="@Url.Action("FAQ","Home")">FAQ</a>
+                                <a class="dropdown-item" href="@Url.Action("About","Home")">About</a>
+                                <a class="dropdown-item" href="@Url.Action("CookMe","Home")">Contact</a>
+                                <a class="dropdown-item" href="@Url.Action("ReTurnMe","Home")">Return Policy</a>
+                                <a class="dropdown-item" href="@Url.Action("CookMe","Home")">Cookies Policy</a>
+                                <a class="dropdown-item" href="@Url.Action("PayMe","Home")">Payment Policy</a>
+                                <a class="dropdown-item" href="@Url.Action("Privacy","Home")">Privacy Policy</a>
+                                <a class="dropdown-item" href="@Url.Action("Terms","Home")">Terms & Conditions</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-md-auto">
+                        <li>
+                            @Html.ActionLink("Basket", "ProceedToCheckOut", "Basket") &nbsp;
+                        </li>
+                        @if (User.IsInRole(role: "Administrator"))
+                        {
+                            <li>
+                                @Html.ActionLink("Admin Page", "AdminPage", "Users") &nbsp;
+                            </li>
+                        }
+                        <li>
+                            @Html.ActionLink("Chat", "Chat", "Users") &nbsp;
+                        </li>
+                        @Html.Partial("_LoginPartial")
+                    </ul>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+    </div>
+    <div>
+        <button id="ToTop" title="Go to top">Top</button>
+        @RenderBody()
+        <hr />
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Resources/JavaScript/nodes.js")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script>
+
+    $(function () {
+        $("#ToTop").click(function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+        //Get the button
+        var toTopButton = document.getElementById("ToTop");
+        // When the user scrolls down 10px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+        //Scrooll Function
+        function scrollFunction() {
+            if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+                toTopButton.style.display = "block";
+            } else {
+                toTopButton.style.display = "none";
+            }
+        }
+    });</script>
+</body>
+</html>

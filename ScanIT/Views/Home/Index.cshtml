@@ -1,0 +1,281 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    AOS.init();
+</script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" id="parallax-world-of-ugg" style="padding-right:0px; padding-left:0px; margin-left:0px; margin-right:0px;">
+            <div class="row title min-vh-100">
+                <div class="col-md-12" style="align-self: center;">
+                    <div class="row  align-items-center align-content-center align-self-center">
+                        <div class="col-md-12 container container_row" style="position: absolute;">
+                            <h1 class="pop layer1" style="position:relative; text-align:center; z-index:0">
+
+                                @if (User.IsInRole(role: "Administrator"))
+                                {
+                                    @Html.ActionLink("ScanIT", "AdminPage", "Users")
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("ScanIT", "Index", "Products")
+                                }
+                            </h1>
+                            <canvas id="canva" class="layer2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row parallax-one min-vh-100" style="padding-right:0px; padding-left:0px; margin-left:0px; margin-right:0px;">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="container">
+                                <div data-aos="fade-up-right" duration="2000">
+                                    <blockquote class="quote-box" style="        background-color: RGB(232, 3, 84);">
+                                        <p id="quotation-mark">
+                                            “
+                                        </p>
+                                        <p style=" font-size: 30px;" class="quote-text">
+                                            ScanIT is a <cite>
+                                                Collective Initiative
+
+                                            </cite>towards improving <br />customer experience.
+                                        </p>
+                                        <hr>
+                                        <div class="quote-underline">
+                                            <p class="blog-post-bottom pull-left" style="font-size:30px;">
+                                                - What is ScanIT?
+                                            </p>
+                                        </div>
+                                    </blockquote>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="container">
+                                <div data-aos="flip-up" data-aos-duration="2000">
+                                    <blockquote class="quote-box" style="        background-color: #fc911d;">
+                                        <p id="quotation-mark">
+                                            “
+                                        </p>
+                                        <p style=" font-size: 30px;" class="quote-text">
+                                            We Design with <cite>Modern Techniques</cite>
+                                            <br /><cite>Ease of Controls</cite>,  User <cite>Preferences</cite> and <br /><br /><cite>People with disabilities</cite> in <cite>mind</cite>
+                                        </p>
+                                        <hr>
+                                        <div class="quote-underline">
+                                            <p class="blog-post-bottom pull-left" style="font-size:30px;">
+                                                - Why ScanIT?
+                                            </p>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="container">
+                                <div data-aos="fade-up-left" data-aos-duration="2000">
+                                    <blockquote class="quote-box" style="        background-color: #b2aa2f  ;">
+                                        <p id="quotation-mark">
+                                            “
+                                        </p>
+                                        <p style=" font-size: 30px;" class="quote-text">
+                                            <cite>Easy, accessible, intuitive</cite><br /><br />shopping experience for <br /><br /><cite>EVERYONE</cite>
+                                        </p>
+                                        <hr>
+                                        <div class="quote-underline">
+                                            <p class="blog-post-bottom pull-left" style="font-size:30px;">
+                                                - What are your Goals and Aspirations?
+                                            </p>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row block min-vh-100">
+                <div class="homewithus">
+                    <img id="withus" src="~/Resources/Images/homewithus.jpg" />
+                </div>
+                <section class="border p-4 text-center mb-4">
+                    <div class="card-group">
+                        <div class="card">
+                            <img src="https://d3fch0cwivr6nf.cloudfront.net/system/uploads/medium/data/11649/Glykopatates_me_solomo.jpg"
+                                 class="card-img-top"
+                                 alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="https://akispetretzikis.com/el/categories/snak-santoyits/glykopatates-gemistes-me-solomo" style="font-size:30px;">Sweet potatoes stuffed with salmon</a></h5>
+                                <p class="card-text" style="float:left;">
+                                    15'
+                                    Execution
+                                    Time
+                                    <br />
+                                    45'
+                                    Baking
+                                    Time
+                                    <br />
+                                    4
+                                    Portions
+                                    <br />
+                                    Degree
+                                    of
+                                    Difficulty:
+                                    1
+                                </p>
+                                <button class="buyingredients" style="float:right;">  @Html.ActionLink("Buy ingredients", "UnderConstruction", "Home")</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://images-gmi-pmc.edge-generalmills.com/4edae80a-8e2a-4e46-8346-0ce7422e3cae.jpg"
+                                 class="card-img-top"
+                                 alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="https://akispetretzikis.com/el/categories/keik/to-apolyto-red-velvet-cake" style="font-size:30px;">The ultimate Red Velvet Cake</a></h5>
+                                <p class="card-text" style="float:left;">
+                                    30'
+                                    Execution
+                                    Time
+                                    <br />
+                                    45'
+                                    Baking
+                                    Time
+                                    <br />
+                                    8-10
+                                    Portions
+                                    <br />
+                                    Degree
+                                    of
+                                    Difficulty:
+                                    2
+                                </p>
+                                <button class="buyingredients" style="float:right;">  @Html.ActionLink("Buy ingredients", "UnderConstruction", "Home")</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://d3fch0cwivr6nf.cloudfront.net/system/uploads/medium/data/9016/recipe_main_akis-petretzikis-vegan-chocolate-custard-site.jpg"
+                                 class="card-img-top"
+                                 alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><a style="font-size:30px;" href="https://akispetretzikis.com/el/categories/glyka-2/vegan-krema-sokolatas">Vegan chocolate cream</a></h5>
+                                <p class="card-text" style="float:left;">
+                                    5'
+                                    Execution
+                                    Time
+                                    <br />
+                                    10'
+                                    Baking
+                                    Time
+                                    <br />
+                                    4
+                                    Portions
+                                    <br />
+                                    Degree
+                                    of
+                                    Difficulty:
+                                    1
+                                </p>
+                                <button class="buyingredients" style="float:right;">  @Html.ActionLink("Buy ingredients", "UnderConstruction", "Home")</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row parallax-two min-vh-100" style="padding-right:0px; padding-left:0px; margin-left:0px; margin-right:0px;">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="container">
+                                <div data-aos="fade-up"
+                                     data-aos-anchor-placement="top-center">
+                                    <blockquote class="quote-box" style="background-color: #6BA292 !important;">
+                                        <p id="quotation-mark">
+                                            “
+                                        </p>
+                                        <p style="font-size: 30px;"
+                                           class="quote-text">
+                                            <br />We would love to hear from you!
+                                        </p>
+                                        <hr>
+                                        <div class="quote-underline">
+                                            <p class="blog-post-bottom pull-left" style="font-size:30px;">
+                                                -The ScanIT Team
+                                            </p>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row block ">
+                <div class="container-fluid" style="font-size:25px;">
+                    <div class="row" id="finalblock">
+                        <div class="col-md-3" id="AboutOrder">
+                            <h4>
+                                About Order
+                            </h4>
+                            <ul>
+                                <li class="list-item">
+                                    @Html.ActionLink("Order Progress", "ProceedToCheckOut", "Basket")
+                                </li>
+                                <li class="list-item">
+                                    @Html.ActionLink("Privacy Policy", "Privacy", "Home")
+                                </li>
+                                <li class="list-item">
+                                    @Html.ActionLink("Payment methods", "PayMe", "Home")
+                                </li>
+                                <li class="list-item">
+                                    @Html.ActionLink("Cookie Policy", "CookMe", "Home")
+                                </li>
+                                <li class="list-item">
+                                    @Html.ActionLink("Return Policy", "ReTurnMe", "Home")
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-3" id="HelpTips">
+                            <h4>
+                                HELP & TIPS
+                            </h4>
+                            <ul>
+                                <li class="list-item">
+                                    @Html.ActionLink("FAQ", "FAQ", "Home")
+                                </li>
+                                <li class="list-item">
+                                    @Html.ActionLink("Will", "About_Will", "Home") @Html.ActionLink("Timos", "About_Timos", "Home") @Html.ActionLink("Petros", "About_Petros", "Home")
+                                </li>
+                                <li class="list-item">
+                                    @Html.ActionLink("Need Help?", "Chat", "Users")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Learn More", "About", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Terms & Conditions", "Terms", "Home")
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿@model ScanIT.ViewModels.ProductVM
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LoginRegisterLayout.cshtml";
+}
+<div style="overflow-y:auto!important; height:100vh!important;">
+    <h4  class="d-flex justify-content-center h1">Product Summary</h4>
+    <hr />
+    @using (Html.BeginForm("AddToBasket", "Basket"))
+    {
+        @Html.AntiForgeryToken()
+        <div class="d-flex justify-content-center h2">
+            @Html.LabelFor(model => model.ProductName)
+        </div>
+        <div class="d-flex justify-content-center h5">
+            @Html.DisplayFor(model => model.ProductName)
+
+        </div>
+
+        <div class="d-flex justify-content-center h2">
+            @Html.LabelFor(model => model.Description)
+
+        </div>
+        <div class="d-flex justify-content-center h5">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+
+        <div class="d-flex justify-content-center h2">
+            @Html.LabelFor(model => model.AvailableQuantity)
+        </div>
+        <div class="d-flex justify-content-center h5">
+            @Html.DisplayFor(model => model.AvailableQuantity)
+        </div>
+
+        <div class="d-flex justify-content-center h2">
+            @Html.LabelFor(model => model.PriceIncludingVAT)
+        </div>
+        <div class="d-flex justify-content-center h5">
+            @Html.DisplayFor(model => model.PriceIncludingVAT)
+        </div>
+        <div class="d-flex justify-content-center h2">
+            @{
+                var base64 = Convert.ToBase64String(Model.Photo);
+                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            }
+            <img src="@imgSrc" style="border-radius: 30px 30px 30px 30px !important; width: 290px; height: 290px;" />
+        </div>
+        <div class="d-flex justify-content-center h2">
+            @Html.LabelFor(model => model.CategoryId)
+        </div>
+        <div class="d-flex justify-content-center h5">
+            @Html.DisplayFor(modelItem => Model.Categories.Where(cat => cat.Id == Model.CategoryId).SingleOrDefault().CategoryName)
+        </div>
+        <div class="d-flex justify-content-center h2">
+            @Html.LabelFor(model => model.SelectedQuantity) &nbsp; &nbsp;
+            @Html.TextBox("SelectedQuantity", null, new { @class = "form-control", @id = "Validatetextbox", @max = Model.AvailableQuantity, @type = "number", @min = 1 })
+        </div>
+        @Html.HiddenFor(y => y.ProductId)
+        @Html.HiddenFor(y => y.ProductName)
+        @Html.HiddenFor(y => y.Description)
+        @Html.HiddenFor(y => y.AvailableQuantity)
+        @Html.HiddenFor(y => y.PriceIncludingVAT)
+        @Html.HiddenFor(y => y.Photo)
+        @Html.HiddenFor(y => y.CategoryId)
+        @Html.HiddenFor(y => y.Categories)
+        <div style="text-align:center;">
+            <button type="submit" class=" btn btn-primary">Add to basket</button>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = " btn btn-primary" })
+            <br />
+            <br />
+        </div>
+
+    }
+    <hr /><div style="text-align:center;">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" }) 
+    </div>
+</div>
+
+

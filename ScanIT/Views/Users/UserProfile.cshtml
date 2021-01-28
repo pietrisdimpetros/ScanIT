@@ -1,0 +1,121 @@
+﻿@model ScanIT.ViewModels.UserInfoVM
+@{
+
+    Layout = "~/Views/Shared/_LoginRegisterLayout.cshtml";
+}
+<h2 style="text-align:center;">
+    @ViewBag.Name
+</h2>
+@using (Html.BeginForm("Save", "Users"))
+{
+    @Html.ValidationSummary(false)
+    <div class="col-md-12 container container_row">
+        <div class="layer1" style="        position: relative;
+        justify-self: center;
+        text-align: center;
+        text-align-last: justify;
+        z-index: 0">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(l => l.FirstName, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(l => l.LastName, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(l => l.DateOfBirth, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.EditorFor(x => x.DateOfBirth, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.DateOfBirth, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(l => l.Country, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(l => l.Region, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.Region, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Region, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(l => l.City, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(l => l.Street, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.Street, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Street, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong> @Html.LabelFor(l => l.StreetNumber, new { @class = "col-md-2 control-label text-nowrap d-table" })</strong>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.StreetNumber, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.StreetNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(l => l.ZipCode, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.ZipCode, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ZipCode, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong>
+                            @Html.LabelFor(b => b.GenderId, new { @class = "col-md-2 control-label text-nowrap d-table" })
+                        </strong>
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(b => b.GenderId, new SelectList(Model.Genders, "Id", "GenderName"), "Select Your Gender", new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center;">
+        <button type="submit" class="center btn btn-primary">Submit</button>
+    </div>
+    @Html.HiddenFor(m => m.UserId)
+    @Html.AntiForgeryToken()
+}
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval") }
+

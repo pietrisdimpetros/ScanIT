@@ -1,0 +1,819 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+/* Override UGG site */
+#main {
+    width: 100%;
+    padding: 0;
+}
+
+.parral, #parallax-world-of-ugg, #changemargins, #container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+    #parallax-world-of-ugg h2:hover, #parallax-world-of-ugg h3:hover, #parallax-world-of-ugg h4:hover {
+        transition-property: color;
+        transition-duration: 0.3s;
+        transition-delay: 0.2s;
+        color: #ff4244;
+    }
+    #parallax-world-of-ugg > div:nth-child(5) {
+        display: inline !important;
+    }
+.content-asset p {
+    margin: 0 auto;
+}
+
+#editone, #edittwo {
+    display: table;
+    padding-left: 20%!important;
+}
+#editone{
+    width:60px!important;
+    height:50px!important;
+}
+.breadcrumb {
+    display: none;
+   
+}
+tbody{
+    color:ghostwhite;
+    font-size:22px!important;
+}
+#example > tbody > tr > td {
+    vertical-align: middle;
+}
+
+#example > tbody > tr > td > div > img, #loginForm > div:nth-child(4) > div > img {
+    border: 10px 1px black;
+    border-radius: 30px 30px 30px 30px !important;
+    width: 290px;
+    height: 290px;
+}
+    #barcodeprd{
+        width:271px!important;
+        height:50px!important;
+    }
+
+
+/* Helpers */
+/**************************/
+.margin-top-10 {
+    padding-top: 10px;
+}
+
+.margin-bot-10 {
+    padding-bottom: 10px;
+}
+
+/* Typography */
+/**************************/
+#parallax-world-of-ugg h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+.quote-text{
+    font-weight:900!important;
+}
+#bs-example-navbar-collapse-1, #productsviews > div.row > div > nav, body > div.row > div > nav, body > div:nth-child(2) > div.row > div > nav {
+    font-size: 30px;
+    background-color: #2e3033 !important;
+}
+#parallax-world-of-ugg h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 10;
+    opacity: .9;
+    text-shadow: 2px 1px black;
+}
+
+#parallax-world-of-ugg h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 0;
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: black;
+}
+
+#parallax-world-of-ugg p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.first-character {
+    font-weight: 400;
+    float: left;
+    font-size: 84px;
+    line-height: 64px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.sc {
+    color: #3b8595;
+}
+
+.ny {
+    color: #3d3c3a;
+}
+
+.atw {
+    color: #c48660;
+}
+
+/* Section - Title */
+/**************************/
+#parallax-world-of-ugg .title {
+    background: white;
+    padding: 60px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    #parallax-world-of-ugg .title h1 {
+        font-size: 35px;
+        letter-spacing: 8px;
+    }
+
+/* Section - Block */
+/**************************/
+#parallax-world-of-ugg .block {
+    background: white;
+    padding: 60px;
+    width: 820px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+#parallax-world-of-ugg .block-gray {
+    background: #f2f2f2;
+    padding: 60px;
+}
+
+#parallax-world-of-ugg .section-overlay-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.70;
+}
+
+/* Section - Parallax */
+/**************************/
+#parallax-world-of-ugg .parallax-one {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(/Resources/Images/brooke-lark.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+#parallax-world-of-ugg .parallax-three {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(/Resources/Images/our-story.png);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+#parallax-world-of-ugg .parallax-four {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(/Resources/Images/our-story.png);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.bg-dark {
+    background-color: #0f151f !important;
+}
+
+#parallax-world-of-ugg .parallax-two {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-image: url(/Resources/Images/dose-juice.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+/* Extras */
+/**************************/
+#parallax-world-of-ugg .line-break {
+    border-bottom: 1px solid black;
+    width: 150px;
+    margin: 0 auto;
+}
+
+
+
+blockquote {
+    border-left: none;
+    padding-bottom: 20px;
+}
+
+.quote-underline {
+    padding-left: 1em;
+}
+
+.quote-box {
+    overflow: hidden;
+    border-radius: 30px;
+    background-color: rgba(13, 18, 28, 0.99);
+    color: white;
+    box-shadow: 5px 5px 5px 5px #E0E0E0;
+}
+#discussion > li > strong {
+    float: left !important;
+    background-color: firebrick;
+    border-radius: 20px 20px 20px 20px;
+  background-size:cover;
+
+}
+
+#text {
+    float: right !important;
+}
+
+#quotation-mark {
+    padding-left: 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 26px;
+    margin-bottom: -22px;
+    margin-top: 28px;
+}
+
+p#quotation-mark {
+    font-size: 80px;
+}
+
+.quote-text {
+    text-align: center;
+    font-size: 26px;
+}
+
+p.quote-text {
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 10px;
+    white-space: pre-line;
+}
+
+*{
+    align-self: center;
+}
+
+#parallax-world-of-ugg > div.row.title.min-vh-100 > div > div > div > h1>a {
+    font: bolder 12vw 'Alfa Slab One';
+    text-align: center;
+    margin: 0;
+    background: url("/Resources/Images/Butterfly.jpg") center;
+    background-size: contain;
+    margin: auto;
+    width: 75vw;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+canvas#canva.layer2 {
+    width: 100%;
+}
+
+#canva {
+    width: 100%;
+    margin-left: 0%;
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.container_row {
+    display: grid;
+}
+
+.layer1, .layer2 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#parallax-world-of-ugg > div:nth-child(6) > div > nav > a {
+    align-self: center;
+    display: block;
+}
+
+#parallax-world-of-ugg > div.row.block {
+    width: 100%;
+    padding: 10px;
+}
+
+body > div > div.cards > figure {
+    font-family: 'Alegreya Sans';
+    position: relative;
+    margin: 20px;
+    width: 180px;
+    height: 270px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+    transform-origin: center top;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: 0.3s;
+}
+
+
+body > div > div.cards > figure > img {
+    font-family: 'Alegreya Sans';
+    width: 100%;
+    min-height: 100%;
+}
+
+body > div > div.cards > figure > figcaption {
+    font-family: 'Alegreya Sans';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    background: none;
+    color: #fff;
+    transform: translateY(100%);
+    transition: 0.3s;
+}
+
+#parallax-world-of-ugg > div.row.block.min-vh-100 > section > div > div {
+    background-color: #10141f;
+    border-radius: 20px 20px 20px 20px;
+    overflow: hidden;
+    color: ghostwhite;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    box-sizing: border-box;
+    align-self: center;
+    padding: 0;
+    margin: 0 0 1rem;
+    border-left: none;
+    padding-bottom: 20px;
+    overflow: hidden;
+    border-radius: 30px;
+    background-color: rgba(13, 18, 28, 0.99);
+    color: white;
+    box-shadow: 5px 5px 5px 5px #10141f;
+    height: 500px;
+}
+#productsviews > div:nth-child(2) > form > div > text {
+    font-weight: 900;
+    text-shadow: 10px black !important;
+    background-color: rgba(13, 18, 28, 0.99);
+    border-radius: 5px 5px 5px 5px!important;
+    border-color: ghostwhite!important;
+}
+    #parallax-world-of-ugg > div.row.block.min-vh-100 > section > div > div:nth-child(odd) {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+ul {
+    list-style-type: none;
+}
+#categoryFilter, #dietaryFilter {
+    color: ghostwhite!important;
+    background-color: rgba(13, 18, 28, 0.99)!important;
+    font-weight:400!important;
+}
+#AboutOrder > ul {
+    padding-left: 0px;
+}
+.buyingredients {
+    background-color: rgba(13, 18, 28, 0.99);
+    color: white;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 5px 5px 5px 5px #E0E0E0;
+    position: absolute;
+}
+
+
+#AboutOrder {
+    text-align: left;
+    box-sizing: border-box;
+    align-self: center;
+    padding: 10px;
+    margin-right: 100px;
+    margin: 0;
+    border-left: none;
+    padding-bottom: 20px;
+    overflow: hidden;
+    border-radius: 30px 30px 30px 10px;
+    background-color: rgba(13, 18, 28, 0.99);
+    color: white;
+    box-shadow: 5px 5px 5px 5px #E0E0E0;
+}
+
+#parallax-world-of-ugg > div.row.block.min-vh-100 > section {
+    border: none !important;
+}
+
+#parallax-world-of-ugg > div.row.block.min-vh-100 > section > div > div {
+    height: max-content;    
+}
+
+#HelpTips {
+    text-align: right;
+    box-sizing: border-box;
+    align-self: center;
+    padding: 10px;
+    margin-right: 100px;
+    margin: 0;
+    border-left: none;
+    padding-bottom: 20px;
+    overflow: hidden;
+    border-radius: 30px 30px 10px 30px;
+    background-color: rgba(13, 18, 28, 0.99);
+    color: white;
+    box-shadow: 5px 5px 5px 5px #E0E0E0;
+}
+
+a{
+    text-decoration: none;
+    color: ghostwhite;
+}
+#parallax-world-of-ugg .parallax-five {
+    padding-top: 300px;
+    padding-bottom: 350px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    opacity: 0.80;
+    background-image: url(/Resources/Images/social1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+
+
+#parallax-world-of-ugg .parallax-six {
+    padding-top: 400px;
+    padding-bottom: 400px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    opacity: 0.9;
+    background-image: url(/Resources/Images/social2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#underpic-text2:hover {
+    transition-property: box-shadow border-radius;
+    transition-duration: 0.3s;
+    transition-delay: 0.2s;
+    transition-timing-function: linear;
+    box-shadow: -2px -2px red;
+}
+
+#pulses:hover {
+    animation: pulse 1s ease-in infinite;
+}
+
+@keyframes pulses {
+    25% {
+        transform: scale(0.9);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+}
+.homewithus {
+    max-width: 50%;
+    align-content: center;
+    margin-inline: auto;
+}
+
+#parallax-world-of-ugg > div.row.block.min-vh-100 > section > div {
+    height: auto;
+}
+
+#withus {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#loginForm > form > div, #socialLoginForm > h4, body > div:nth-child(2) > div:nth-child(1) > h1 {
+    text-align: center;
+}
+
+
+    #loginForm > form > div:nth-child(7) > div > input {
+        border: 1px solid black;
+    }
+    #loginForm > form > p > a{
+        color: #0e151f;
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        margin: 15px;
+        text-align: center;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        cursor: pointer;
+    }
+#loginForm > form {
+    text-align-last: start;
+}
+
+
+#regForm > form > div, #socialLoginForm > h4, body > div:nth-child(2) > div:nth-child(1) > h1 {
+    text-align: center;
+}
+
+
+#regForm > form > div:nth-child(7) > div > input {
+    border: 1px solid black;
+}
+
+#regForm > form > p > a {
+    color: #0e151f;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    margin: 15px;
+    text-align: center;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+}
+#regForm > form {
+    text-align-last: start;
+}
+#finalblock {
+    background-image: url(/Resources/Images/BackGround-ScanIT-Logo-White.png);
+    background-position: center;
+    align-self: center;
+    max-width: 100%;
+}
+ #parallax-world-of-ugg > section:nth-child(2) > div {
+    width: 80% !important;
+}
+
+#myimages {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 1.1;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 100%;
+    border: 2px solid;
+    padding: 10px;
+    box-shadow: 5px 10px;
+    border-radius: 60px 60px 60px 60px;
+    transition-duration: 0.354s;
+    transition-delay: 0.5s;
+    transition-timing-function: linear;
+}
+
+
+#myimages:hover {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 1.1;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-left: -10%;
+    border: 2px solid;
+    padding: 10px;
+    transition-duration: 0.3s;
+    transition-delay: 0.2s;
+    transition-timing-function: linear;
+    box-shadow: 10px 20px;
+    border-radius: 10px 80px 80px 80px;
+}
+
+
+#underpic-text {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 1.1;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 33.33333333%;
+    min-width: fit-content;
+}
+
+#underpic-text:hover {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 1.1;
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 1px;
+    float: left;
+    width: 33.33333333%;
+    transition-duration: 0.3s;
+    transition-delay: 0.2s;
+    transition-timing-function: linear;
+    box-shadow: 6px 6px red;
+}
+
+#underpic-text > p {
+    font-size: 20px;
+}
+#designedby {
+    position: absolute;
+    left: 62%;
+    top: 59%;
+}
+
+#regsections {
+    position: relative !important;
+    width: 100% !important;
+}
+    #regsections:nth-child(odd) {
+        float: right;
+    }
+
+    #regsections:nth-child(even) {
+        float: left;
+    }
+
+.justify-content-center layer1 {
+    justify-self: center;
+}
+
+#regforms > div.container-fluid > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > label {
+    display: table!important;
+}
+/*Go to TOP Button*/
+#ToTop {
+    display: none;
+    position: fixed;
+    padding-left: 10px;
+    padding-right: 10px;
+    bottom: 30%;
+    right: 30px;
+    z-index: 999;
+    font-size: 25px;
+    border-radius: 80px 10px 80px 80px;
+    border-color: none;
+    text-align: center;
+    background-color: #31383f;
+    color: white;
+    cursor: pointer;
+    padding: 3px;
+    transition-timing-function: linear;
+    transition-duration: 0.15s;
+    transition-delay: 0.2s;
+}
+
+    #toTop:hover {
+        color: rgb(255, 227, 227);
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #282E34;
+        transition-timing-function: linear;
+        transition-duration: 0.31s;
+        transition-delay: 0.1s;
+    }
+
+    #toTop:active {
+        background-color: #292e34;
+    }
+
+/* Media Queries */
+/**************************/
+@media screen and (max-width: 959px) and (min-width: 768px) {
+    #parallax-world-of-ugg .block {
+        padding: 40px;
+        width: 620px;
+    }
+    label{
+        width:20%!important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #parallax-world-of-ugg .block {
+        padding: 30px;
+        width: 420px;
+    }
+    label {
+        width: 20% !important;
+    }
+
+    #parallax-world-of-ugg h2 {
+        font-size: 30px;
+    }
+
+    #parallax-world-of-ugg .block {
+        padding: 30px;
+    }
+
+    #parallax-world-of-ugg .parallax-one, #parallax-world-of-ugg .parallax-three, #parallax-world-of-ugg .parallax-four, #parallax-world-of-ugg .parallax-two {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    #parallax-world-of-ugg .block {
+        padding: 30px 15px;
+        width: 290px;
+    }
+    label {
+        width: 20% !important;
+    }
+}
+
+#productsviews > * {
+    color:ghostwhite;
+}

@@ -1,0 +1,16 @@
+﻿@model ScanIT.Models.ApplicationUser
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginRegisterLayout.cshtml";
+    ViewBag.Welcome = $"Welcome {Model.LastName} {Model.FirstName} ";
+}
+<h2 style="text-align:center; margin-bottom:20px;">@ViewBag.Welcome</h2>
+
+@if (User.IsInRole("Administrator"))
+{
+    @Html.Partial("_IndexAdmin")
+}
+else
+{
+    @Html.Partial("_IndexUser")
+}

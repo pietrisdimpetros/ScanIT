@@ -1,0 +1,78 @@
+﻿@model Product
+
+@{
+    Layout = "~/Views/Shared/_LoginRegisterLayout.cshtml";
+    ViewBag.Title = "Delete Product";
+}
+<div class="col-md-12 d-flex justify-content-center " style="position: absolute;">
+    <div class="layer1  "">
+        <div class="container-fluid ">
+            <div id="logsin" class="row ">
+                <section id="loginForm" style="text-align:center;">
+                    <h4>Are you sure you want to delete this?</h4>
+                    <hr />
+                    <div class="form-group  d-flex justify-content-left">
+                        @Html.DisplayNameFor(model => model.ProductName)
+                        <div class="col-md-10  d-flex justify-content-end mw-100">
+                            @Html.DisplayFor(model => model.ProductName)
+                        </div>
+                    </div>
+                    <div class="form-group  d-flex justify-content-left">
+                        @Html.DisplayNameFor(model => model.Photo)
+                    <div class="col-md-10  d-flex justify-content-end mw-100">
+                        @{
+                            var base64 = Convert.ToBase64String(Model.Photo);
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        }
+                        <img src="@imgSrc" />
+                    </div>
+                    </div>
+                    <div class="form-group  d-flex justify-content-left">
+                        @Html.DisplayNameFor(model => model.BarCode)
+                        <div class="col-md-10  d-flex justify-content-end mw-100">
+                            @{
+                                var base64barcode = Convert.ToBase64String(Model.BarCode);
+                                var imgSrcbarcode = String.Format("data:image/gif;base64,{0}", base64barcode);
+                            }
+                            <img id="barcodeprd" src="@imgSrcbarcode" />
+                        </div>
+                    </div>
+                    <div class="form-group  d-flex justify-content-left">
+                        @Html.DisplayNameFor(model => model.Description)
+                        <div class="col-md-10  d-flex justify-content-end mw-100">
+                            @Html.DisplayFor(model => model.Description)
+                        </div>
+                    </div>
+                    <div class="form-group  d-flex justify-content-left">
+                        @Html.DisplayNameFor(model => model.AvailableQuantity)
+                        <div class="col-md-10  d-flex justify-content-end position-relative">
+                            @Html.DisplayFor(model => model.AvailableQuantity)
+                        </div>
+                    </div>
+                    <div class="form-group  d-flex justify-content-left">
+                        @Html.DisplayNameFor(model => model.InitialPrice)
+                        <div class="col-md-10  d-flex justify-content-end mw-100">
+                            @Html.DisplayFor(model => model.InitialPrice)
+                        </div>
+                    </div>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color  d-flex justify-content-center">
+                            <input type="submit" value="Delete" class="btn btn-dark" /> &nbsp;
+                            @Html.ActionLink("Back to List", "Index",null,null,new {@class="btn btn-dark" })
+                        </div>
+                    }
+                </section>
+            </div>
+            <hr />
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "ThankYouScreen";
+    Layout = "~/Views/Shared/_LoginRegisterLayout.cshtml";
+}
+<h2 style="text-align:center;">
+    @ViewBag.MessageTitle
+</h2>
+
+<br />
+<br />
+<br />
+<p style="text-align:center;">
+    @ViewBag.Message
+</p>
+
+<br />
+<br />
+<br />
+
+<div class="d-flex justify-content-center">
+    @Html.ActionLink("Continue browsing", "Index", "Products", null, new { @class = "btn btn-primary" })
+
+</div>
+
+
+@Scripts.Render("~/bundles/jqueryval") }
+

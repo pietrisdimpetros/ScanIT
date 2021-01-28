@@ -1,0 +1,103 @@
+﻿@model ScanIT.ViewModels.ProductVM
+
+@{
+    Layout = "~/Views/Shared/_LoginRegisterLayout.cshtml";
+    ViewBag.Title = "Edit";
+}
+<div class="col-md-12 container container_row" style="position: absolute;">
+    <div class="layer1" style="position:relative; text-align:center; z-index:0">
+        <div class="container-fluid">
+            <div id="logsin" class="row d-flex justify-content-center">
+                <section id="loginForm" style="text-align:center;">
+                    @using (Html.BeginForm("Save", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4 style="text-align-last:center;">Edit Product</h4>
+                        <hr />
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AvailableQuantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.AvailableQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AvailableQuantity, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.InitialPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.InitialPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.InitialPrice, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @{
+                                var base64 = Convert.ToBase64String(Model.Photo);
+                                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                            }
+
+                            <img  src="@imgSrc"  style="        margin-left: 4%;
+        border-radius: 30px 30px 30px 30px !important;
+        width: 290px;
+        height: 290px;
+"/>
+                            <div class="col-md-10">
+
+                                <input class="btn btn-dark" type="file" name="ProductImageData" id="ProductImageData" onchange="fileCheck(this);" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Dietaries.SingleOrDefault().DietaryName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.ListBoxFor(b => b.DietariesIds, new MultiSelectList(Model.Dietaries, "Id", "DietaryName"), new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Dietaries, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(b => b.CategoryId, new SelectList(Model.Categories, "Id", "CategoryName"), "Select Category", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Dietaries, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @{
+                                var base64barcode = Convert.ToBase64String(Model.BarCode);
+                                var imgSrcbarcode = String.Format("data:image/gif;base64,{0}", base64barcode);
+                            }
+                            <img  id="edittwo" src="@imgSrcbarcode" style="border-radius: 30px 30px 30px 30px !important; width: 290px; height: 290px;" />
+                            <div class="col-md-10">
+                                <input class="btn btn-dark " type="file" name="ProductBarcodeData" id="ProductBarcodeData" onchange="fileCheck(this);" />
+                            </div>
+                        </div>
+                        @Html.HiddenFor(y => y.ProductId)
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10" style="text-align-last:center;">
+                                <input type="submit" value="Save" class="btn btn-dark" /> &nbsp;  @Html.ActionLink("Back to List", "Index", null, null, new { @class = "btn btn-dark" })
+                            </div>
+                        </div>
+                    }
+                </section>
+            </div>
+            <hr />  <hr />  <hr />
+        </div>
+    </div>
+    <canvas id="canva" class="layer2"></canvas>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

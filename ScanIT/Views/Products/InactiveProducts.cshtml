@@ -1,0 +1,132 @@
+﻿@model ScanIT.ViewModels.ProductsDetailsVM
+@{
+    ViewBag.Title = "InactiveProducts";
+    Layout = "~/Views/Shared/_ProductsLayout.cshtml";
+}
+
+
+
+
+<h1 class="d-flex justify-content-center">@ViewBag.Name</h1>
+
+
+
+
+<table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+
+    @foreach (var product in Model.Products)
+    {
+        <thead style="color:ghostwhite;">
+            <tr style="background-color: rgba(14, 21, 31, 0.85)">
+                <th>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayNameFor(model => model.Products.SingleOrDefault().ProductName)
+                    </div>
+                </th>
+                <th>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayNameFor(model => model.Products.SingleOrDefault().Description)
+                    </div>
+                </th>
+                <th>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayNameFor(model => model.Categories.SingleOrDefault().CategoryName)
+                    </div>
+                </th>
+                <th>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayNameFor(model => model.Dietaries.SingleOrDefault().DietaryName)
+                    </div>
+                </th>
+                <th>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayNameFor(model => model.Products.SingleOrDefault().PriceIncludingVAT)
+                    </div>
+                </th>
+                <th>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayNameFor(model => model.Categories.SingleOrDefault().VAT)
+                    </div>
+                </th>
+                <th>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayNameFor(model => model.Products.SingleOrDefault().AvailableQuantity)
+                    </div>
+                </th>
+                <th>
+                    <div class="d-flex justify-content-center">
+                        Restore Product
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody style="        background-color: rgba(14, 21, 31, 0.55);
+        font-weight: 700;
+        text-shadow: 1px 1px rgba(14, 21, 31, 0.55)
+">
+            <tr>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => product.ProductName)
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        @{
+                            var base64 = Convert.ToBase64String(product.Photo);
+                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        }
+                        <img src="@imgSrc" />
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        @{
+                            var base64barcode = Convert.ToBase64String(product.BarCode);
+                            var imgSrcbarcode = String.Format("data:image/gif;base64,{0}", base64barcode);
+                        }
+                        <img id="barcodeprd" src="@imgSrcbarcode" />
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => product.Description)
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => Model.Categories.Where(cat => cat.Id == product.CategoryId).SingleOrDefault().CategoryName)
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @foreach (var item in Model.ProductDietaries.Where(y => y.ProductId == product.Id))
+                        {
+                            @Html.DisplayFor(modelItem => item.Dietary.DietaryName)
+                            <br />
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => product.PriceIncludingVAT)
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => Model.Categories.Where(cat => cat.Id == product.CategoryId).SingleOrDefault().VAT)
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => product.AvailableQuantity)
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.ActionLink("Restore Product", "RestoreProduct", "Products", new { id = product.Id }, new { @class = "btn btn-primary" })&nbsp;
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+
+
+

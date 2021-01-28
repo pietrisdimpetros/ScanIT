@@ -1,0 +1,15 @@
+﻿@model ScanIT.ViewModels.ProductsDetailsVM
+
+@{
+    Layout = "~/Views/Shared/_ProductsLayout.cshtml";
+    ViewBag.Title = "Index";
+
+}
+<h1>
+    @ViewData["OutOfStock"]
+</h1>
+    @Html.Partial("_IndexManager")
+    @Html.Partial("_IndexUser")
+
+
+

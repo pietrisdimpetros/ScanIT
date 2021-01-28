@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ScanIT.Models.ApplicationUser>
+@{
+    ViewBag.Title = "AdminPage";
+    Layout = "~/Views/Shared/_LoginRegisterLayout.cshtml";
+}
+<h1 class="d-flex justify-content-center">AdminPage</h1>&nbsp;&nbsp;&nbsp;
+<table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+
+
+    <thead style="color:ghostwhite;">
+        <tr style="background-color: rgba(14, 21, 31, 0.85)">
+            <th>
+                <div class="d-flex justify-content-center">
+                    @Html.DisplayNameFor(y => y.FirstName)
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-center">
+                    @Html.DisplayNameFor(y => y.LastName)
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-center">
+                    @Html.DisplayNameFor(y => y.Email)
+                </div>
+            </th>
+            <th>
+                <div class="d-flex justify-content-center">
+
+                </div>
+            </th>
+
+        </tr>
+    </thead>
+
+    @foreach (var user in Model)
+    {
+        <tbody style="background-color: rgba(14, 21, 31, 0.55);
+                              font-weight: 700;
+                              text-shadow: 1px 1px rgba(14, 21, 31, 0.55)
+                              ">
+            <tr>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => user.FirstName)
+                    </div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => user.LastName)
+                    </div>
+                </td>
+
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.DisplayFor(modelItem => user.Email)
+                    </div>
+                </td>
+
+                <td>
+                    <div class="d-flex justify-content-center">
+                        @Html.ActionLink("Edit User", "AdminEdit", new { id = user.Id }, new { @class = "btn btn-primary" })
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    }
+
+</table>
+
+<div class="d-flex justify-content-center">
+    @Html.ActionLink("Back To Profile","Index","Users", null, new { @class = "btn btn-primary" })
+</div>
